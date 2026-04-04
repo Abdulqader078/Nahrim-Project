@@ -9,7 +9,7 @@
 <body>
     <div class="dashboard">
         <div class="navbar">
-         <img src="{{ url_for('static', filename='Images/logonahrimwebsite.png') }}" alt="Nahrim Logo" class="navbar-logo" height="100" width="400">
+         <img src="{{ url_for('static', filename='Images/logonahrimwebsite.png') }}" alt="Nahrim Logo" class="navbar-logo" height="100" width="400" onclick="window.location.href='/'">
             <a href="/">Home</a>
             <a href="/map">Map</a>
             <a href="/data">Data Sets</a>
@@ -46,8 +46,8 @@
                         </table>
                     </div>
                 </div>
-                <div class="map-box">
-                    <input type="submit">View Interactive Map</input>
+                <div class="map-box" onclick="window.location.href='/map'">
+                    <p>View Interactive Map</p>
                 </div>
             </div>
             <div class="side-panel">
