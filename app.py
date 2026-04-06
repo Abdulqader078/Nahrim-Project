@@ -2,7 +2,7 @@ from flask import Flask, render_template, jsonify
 import sqlite3 
 
 app = Flask(__name__)
-DB = "Database/Nahrim_Database_final.db"
+DB = "../Database/Nahrim_Database_final.db"
 
 @app.route('/')
 def home(): 
