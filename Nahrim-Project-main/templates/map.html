@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map of Hospitals in Selangor and Kedah Region</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/stylesheet.css') }}">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+</head>
+<body>
+    <div class="navbar">
+         <img src="{{ url_for('static', filename='Images/logonahrimwebsite.png') }}" alt="Nahrim Logo" class="navbar-logo" height="100" width="400" onclick="window.location.href='/'">
+        <a href="/">Home</a>
+        <a href="/map">Map</a>
+    </div>
+    <div class="heatmap-btn">
+        <button id="heatmapBtn" onclick="toggleHeatmap()">Show Heatmap</button>
+    </div>
+    <div class="map-row">
+        <div id="map"></div>
+        <div id="map2"></div>
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+    <script src="{{ url_for('static', filename='JS/map.js') }}"></script>
+</body>
+</html>
