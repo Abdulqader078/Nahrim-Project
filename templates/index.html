@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='CSS/stylesheet.css') }}">
+    <title>Nahrim Dashboard</title>
+</head>
+
+<body>
+    <div class="dashboard">
+        <div class="navbar">
+            <img src="{{ url_for('static', filename='Images/logonahrimwebsite.png') }}" alt="Nahrim Logo"
+                class="navbar-logo" height="100" width="400" onclick="window.location.href='/'">
+            <a href="/">Home</a>
+            <a href="/map">Map</a>
+        </div>
+        <div class="searchbar">
+            <input type="text" placeholder="Search Hospitals, locations....">
+        </div>
+
+        <div class="layout">
+            <div class="side-panel">
+                <h2>Biggest Hospitals in Keddah</h2>
+                <ul>
+                    <li>1.Sultanah Bahiyah Hospital</li>
+                    <li>2.Sultan Abdul Halim Hospital </li>
+                    <li>3.KPJ Kedah Medical Centre</li>
+                </ul>
+            </div>
+            <div class="center">
+                <h1>Nahrim Dashboard</h1>
+                <div class="graph-controls">
+                    <label for="durationSelect">Show data every:</label>
+                    <select id="durationSelect" onchange="updateCharts()">
+                        <option value="1">Every 1 Day</option>
+                        <option value="7">Every 7 Days</option>
+                        <option value="14">Every 14 Days</option>
+                    </select>
+                </div>
+                <div class="chart-row">
+
+                    <div class="chart">
+                        <canvas id="visualChart"></canvas>
+                    </div>
+                    <div class="chart">
+                        <canvas id="openmeteoChart"></canvas>
+                    </div>
+                    <div class="chart">
+                        <canvas id="nahrimChart"></canvas>
+                    </div>
+                </div>
+                <div class="table-box">
+                    <div class="table-content">
+                        <table id="hospitalTable">
+                            <thead>
+                                <tr>
+                                    <th>Hospital Name</th>
+                                    <th>Address</th>
+                                    <th>Latitude</th>
+                                    <th>Longtitude</th>
+                                    <th>Type</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="map-box" onclick="window.location.href='/map'">
+                    <p>View Interactive Map</p>
+                </div>
+            </div>
+            <div class="side-panel">
+                <h2>Biggest Hospitals Selangor</h2>
+                <ul>
+                    <li>1. Sunway Medical Centre</li>
+                    <li>2.Subang Jaya Medical Centre</li>
+                    <li>3.Ara Damansara Medical Centre</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="{{ url_for('static', filename='JS/data.js') }}"></script>
+    <script src="{{ url_for('static', filename='JS/dashboard.js') }}"></script>
+</body>
+
+</html>
