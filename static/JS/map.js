@@ -28,10 +28,10 @@ fetch('/hospitals')
         hospitals.forEach(function(h) {
             L.marker([h.lat, h.lng])
             .addTo(mapKedah)
-            .bindPopup('<b>' + h.name + '</b></br>' + h.type + d.intensity)
+            .bindPopup('<b>' + h.name + '</b></br>' + h.type);
             L.marker([h.lat, h.lng])
             .addTo(mapSelangor)
-            .bindPopup('<b>' + h.name + '</b></br>' + h.type + d.intensity);
+            .bindPopup('<b>' + h.name + '</b></br>' + h.type);
         });
     });
 
